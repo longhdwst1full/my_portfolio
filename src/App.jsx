@@ -17,6 +17,7 @@ import Banner from "./components/Banner";
 import About from "./components/About";
 import Skill from "./components/Skill";
 import Footer from "./components/Footer";
+import Education from "./components/Education";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,6 +27,8 @@ export default function App() {
       <Header />
       {/* banner */}
       <Banner />
+      <Skill />
+      <Education/>
       <main
         className={`w-[1200px] m-auto  pt-10   ${
           darkMode ? "bg-slate-800" : ""
@@ -34,7 +37,7 @@ export default function App() {
         {/* about me */}
         <About />
         {/*skill  */}
-        <Skill />
+       
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">developedbyed</h1>
