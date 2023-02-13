@@ -20,12 +20,13 @@ import Footer from "./components/Footer";
 import Education from "./components/Education";
 
 import { motion, useScroll, useSpring } from "framer-motion";
+import Contact from "./components/Contact";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const { scrollYProgress } = useScroll();
-  
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -34,7 +35,7 @@ export default function App() {
   // text #001c55
   return (
     <>
-      <div className="bg-[#edf9fe] relative">
+      <div className="bg-[#edf9fe] relative overflow-hidden">
         <Header
           children={
             <motion.div
@@ -46,17 +47,17 @@ export default function App() {
 
         {/* banner */}
         <Banner />
-        <Skill />
+        <About />
         <Education />
-            {/* about me */}
-            <About />
-            {/*skill  */}
+        <Skill />
+        {/* about me */}
+        {/*skill  */}
+        <Contact />
         <main
           className={`max-w-[1200px] m-auto  pt-10   ${
             darkMode ? "bg-slate-800" : ""
           }`}
         >
-
           <section className="min-h-screen">
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
               <h1 className="font-burtons text-xl">developedbyed</h1>
