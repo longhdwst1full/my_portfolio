@@ -5,7 +5,7 @@ const Education = () => {
     <section className="bg-yellow-500 p-20 pb-10">
       <div className="text-center">
         <h2 className="text-4xl text-black  font-bold ">
-          <i class="fas fa-graduation-cap mr-4"></i>
+          <i className="fas fa-graduation-cap mr-4"></i>
           My <span className="text-[#7303A7]"> Education</span>
         </h2>
         <p className="mt-3 font-medium pb-5">
@@ -18,7 +18,7 @@ const Education = () => {
         <img src="" alt="" />
       </div>
 
-      <div className="w-[1200px] m-auto flex flex-col gap-4">
+      <div className="max-w-[1200px] m-auto flex flex-col gap-4">
         <div className="visible opacity-100 transform transform-[matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)] transition-all flex w-4/5 mt-5 rounded-lg shadow-sm bg-white hover:shadow-xl m-auto">
           <div className="">
             <img className="w-full  object-cover relative"

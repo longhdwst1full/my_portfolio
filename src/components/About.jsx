@@ -1,7 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 const About = () => {
   return (
-    <div className="  my-5 w-[1200px] m-auto mb-8">
+    <div className="  my-5 max-w-[1200px] m-auto mb-8">
       <h2 className="text-4xl p-2 font-extrabold text-center">
         <i className=" mr-4 fa-solid fa-user"></i>
         About
@@ -9,13 +11,24 @@ const About = () => {
       </h2>
 
       <div className="p-10 grid grid-cols-2 gap-x-4 place-items-center">
-        <div className="m-10 rounded-3xl overflow-hidden shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
-          <img
-            src="https://jigarsable.netlify.app/assets/images/hero.png"
-            className="w-full"
-            alt=""
-          />
-        </div>
+        <motion.div
+          className="m-10 rounded-3xl overflow-hidden shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
+          // initial={{ opacity: 0, scale: 0.5 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{
+          //   duration: 0.8,
+          //   delay: 0.5,
+          //   ease: [0, 0.71, 0.2, 1.01],
+          // }}
+        >
+         
+            <img
+              src="https://jigarsable.netlify.app/assets/images/hero.png"
+              className="w-full"
+              alt=""
+            />
+          
+        </motion.div>
         <div className="p-7.5">
           <h1 className="text-3xl font-bold">I'm Hoàng Đình Long</h1>
           <p className="font-bold my-1">Full Stack Developer</p>
