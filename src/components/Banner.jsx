@@ -1,10 +1,21 @@
-import React from "react";
-
+import { motion } from "framer-motion";
 const Banner = () => {
   return (
     <section className="bg-green-400 w-full  relative flex min-h-screen items-center">
-      <div className="w-full h-full flex justify-between items-center px-10 pt-20  md:px-20 lg:px-40 ">
-        <div>
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 2,
+          delay: 0.5,
+        }}
+        className="w-full h-full flex justify-between items-center px-10 pt-20  md:px-20 lg:px-40 overflow-hidden"
+      >
+        <motion.div className="overflow-hidden"
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: [-10, 0], opacity: 1 }}
+          transition={{ duration: 1 ,delay:0.4 ,ease :"easeInOut"}}
+        >
           <h2 className="text-4xl pb-3 font-extrabold px-1 py-3 leading-tight">
             Hi There,
             <br />
@@ -35,7 +46,7 @@ const Banner = () => {
               />
             </p>
           </div>
-        </div>
+        </motion.div>
         <div className="pb-8">
           <img
             src="https://jigarsable.netlify.app/assets/images/hero.png"
@@ -43,7 +54,7 @@ const Banner = () => {
             alt=""
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

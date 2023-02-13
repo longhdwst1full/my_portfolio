@@ -1,9 +1,9 @@
-import React from "react";
-
+import { motion } from "framer-motion";
 const Education = () => {
   return (
     <section className="bg-yellow-500 p-20 pb-10">
-      <div className="text-center">
+      <motion.div initial={{opacity: 0}}
+        whileInView={{y: [-50, 0], opacity: 1}}  className="text-center">
         <h2 className="text-4xl text-black  font-bold ">
           <i className="fas fa-graduation-cap mr-4"></i>
           My <span className="text-[#7303A7]"> Education</span>
@@ -12,7 +12,7 @@ const Education = () => {
           Education is not the learning of facts, but the training of the mind
           to think.
         </p>
-      </div>
+      </motion.div>
 
       <div className="rounded-md bg-white flex shadow mt-5">
         <img src="" alt="" />
