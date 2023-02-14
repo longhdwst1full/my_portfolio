@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 const Contact = () => {
   return (
-    <section className=" p-20 pb-10" id="contact_me">
+    <section className="p-20 pb-10" id="contact_me">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}

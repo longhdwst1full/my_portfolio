@@ -10,7 +10,7 @@ const Skill = () => {
   }, []);
   
   return (
-    <section  className="bg-gradient-to-b from-[#57059e] to-[#4a00e0] min-h-[90vh] pb-10">
+    <section id="skill"  className="bg-gradient-to-b from-[#57059e] to-[#4a00e0] min-h-[90vh]  py-20 pb-10">
       <h2 className="text-4xl text-white text-center font-bold py-6 mb-5">
         <i className="fas fa-laptop-code mr-4"></i>
         Skills & <span className="text-[#FFe600]">Abilities</span>
