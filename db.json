@@ -59,10 +59,7 @@
     }
   ],
   "navDetail": [
-    {
-      "name": "Home",
-      "path": "/"
-    },
+   
     {
       "name": "About",
       "path": "/#about"
@@ -131,7 +128,7 @@
     {
       "id": 1,
       "school_name": "CĐ FPT",
-      "img_school": "./public/cđfpt.jfif",
+      "img_school": "./public/cđfpt.png",
       "description": "Lập trình web",
       "time": "2019"
     }
