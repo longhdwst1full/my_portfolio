@@ -69,16 +69,12 @@
       "path": "/#skill"
     },
     {
+      "name": "Project",
+      "path": "/#project"
+    },
+    {
       "name": "Education",
       "path": "/#education"
-    },
-    {
-      "name": "Work",
-      "path": "/#word"
-    },
-    {
-      "name": "Experience",
-      "path": "/#experience"
     },
     {
       "name": "Contacts",

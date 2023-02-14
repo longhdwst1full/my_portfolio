@@ -9,8 +9,8 @@ const About = () => {
   }, []);
 
   return (
-    <div  className="  my-5 max-w-[1200px] m-auto mb-8">
-      <motion.div id="about"
+    <div id="about"  className="max-w-[1200px] m-auto py-20 pb-10">
+      <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
         transition={{

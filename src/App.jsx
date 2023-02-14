@@ -9,9 +9,6 @@ import deved from "../public/dev-ed-wave.png";
 import code from "../public/code.png";
 import design from "../public/design.png";
 import consulting from "../public/consulting.png";
-import web1 from "../public/web1.png";
-import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import About from "./components/About";
@@ -21,6 +18,7 @@ import Education from "./components/Education";
 
 import { motion, useScroll, useSpring } from "framer-motion";
 import Contact from "./components/Contact";
+import Project from "./components/Project";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -45,15 +43,19 @@ export default function App() {
           }
         />
 
-        {/* banner */}
         <Banner />
+
         <About />
+
         <Education />
+
         <Skill />
-        {/* about me */}
-        {/*skill  */}
+
+        <Project/>
+     
         <Contact />
-        <main
+
+        {/* <main
           className={`max-w-[1200px] m-auto  pt-10   ${
             darkMode ? "bg-slate-800" : ""
           }`}
@@ -236,7 +238,8 @@ export default function App() {
               </div>
             </div>
           </section>
-        </main>
+        </main> */}
+        
         <Footer />
       </div>
     </>

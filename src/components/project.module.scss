@@ -1,0 +1,135 @@
+/* work section starts */
+
+.work {
+  /* background: #010124; */
+  min-height: 100vh;
+  padding: 2rem 9%;
+
+  background: linear-gradient(to bottom, #000031, #00002c);
+  .heading {
+    font-size: 3.5rem;
+    color: rgb(32, 32, 32);
+    font-weight: 800;
+    text-align: center;
+    span {
+      color: rgb(255, 230, 0);
+    }
+  }
+  h2.heading {
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .box-container {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem;
+    .box {
+      flex: 1 1 28%;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .content {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 85%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        flex-direction: column;
+        .tag {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 4.5rem;
+          width: 100%;
+          padding-left: 1rem;
+          background: #ffd900;
+          h3 {
+            font-size: 20px;
+          }
+        }
+        .desc {
+          margin: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          p {
+            font-size: 16px;
+          }
+          .btns {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+            .btn {
+              line-height: 0;
+              display: inline;
+              padding: 15px 25px;
+              border-radius: 0.5rem;
+              font-size: 16px;
+              color: #fff;
+              background: rgb(12, 12, 12);
+              margin-right:20px;
+            }
+          }
+        }
+
+        .desc .btns .btn:hover {
+          background: #310ae0f5;
+        }
+      }
+    }
+  }
+
+  .box-container .box:hover .content {
+    top: 25%;
+  }
+
+  .viewall {
+    display: flex;
+    justify-content: center;
+    .btn {
+      position: relative;
+      line-height: 0;
+      padding: 1.6rem 3rem;
+      border-radius: 0.5em;
+      transition: 0.5s;
+      color: rgb(255, 255, 255);
+      font-weight: 700;
+      border: 2px solid #fff;
+      box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
+      text-align: center;
+      span {
+        font-weight: 600;
+        font-size: 17px;
+        font-family: "Nunito", sans-serif;
+      }
+      i {
+        margin-left: 0.3rem;
+        font-size: 1.5rem;
+        transition: 0.3s;
+      }
+    }
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+    .btn:hover i {
+      transform: translateX(5px);
+    }
+    /* work section ends */
+  }
+}

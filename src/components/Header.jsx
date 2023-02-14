@@ -10,7 +10,7 @@ const Header = ({ children }) => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 py-4  font-bold bg-white text-black w-full  m-auto shadow-[#92a1b04d] z-40">
+    <div className="fixed top-0 left-0 right-0 py-4  font-bold bg-white text-black w-full  m-auto shadow-[#92a1b04d] z-40 opacity-90">
       {children}
       <div className="max-w-[1200px] shadow-[#92a1b04d] m-auto flex justify-between ">
         <div>
