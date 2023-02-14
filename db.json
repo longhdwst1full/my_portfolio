@@ -1,0 +1,139 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "name": "HTML5",
+      "image": "./public/html-5--v1.png"
+    },
+    {
+      "id": "2",
+
+      "name": "CSS3",
+      "image": "./public/css3.png"
+    },
+    {
+      "id": "3",
+
+      "name": "JavaScript",
+      "image": "./public/javascript--v1.png"
+    },
+    {
+      "id": "4",
+      "name": "ReactJS",
+      "image": "./public/reactjs_.png"
+    },
+    {
+      "id": 5,
+      "name": "NodeJS",
+      "image": "./public/nodejs.png"
+    },
+    {
+      "id": 6,
+      "name": "Redux",
+      "image": "./public/redux.png"
+    },
+    {
+      "id": 7,
+      "name": "TailwindCSS",
+      "image": "./public/Tailwind_CSS_svg.png"
+    },
+    {
+      "id": 8,
+      "name": "Bootstrap",
+      "image": "./public/bootstrap.png"
+    },
+    {
+      "id": 9,
+      "name": "PHP",
+      "image": "./public/php-logo.png"
+    },
+    {
+      "id": 10,
+      "name": "GitHub",
+      "image": "./public/github.png"
+    },
+    {
+      "id": 11,
+      "name": "PHP",
+      "image": "./public/php-logo.png"
+    }
+  ],
+  "navDetail": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "About",
+      "path": "/#about"
+    },
+    {
+      "name": "Skill",
+      "path": "/#skill"
+    },
+    {
+      "name": "Education",
+      "path": "/#education"
+    },
+    {
+      "name": "Work",
+      "path": "/#word"
+    },
+    {
+      "name": "Experience",
+      "path": "/#experience"
+    },
+    {
+      "name": "Contacts",
+      "path": "/#contact_me"
+    }
+  ],
+  "icon_contacts": [
+    {
+      "name": "GitHub",
+      "class": "fab fa-github"
+    },
+    {
+      "name": "Twitter",
+      "class": "fab fa-twitter"
+    },
+    {
+      "name": "telegram",
+      "class": "fab fa-telegram-plane"
+    },
+    {
+      "name": "mail",
+      "class": "fas fa-envelope"
+    },
+    {
+      "name": "phone",
+      "class": "fas fa-phone"
+    },
+    {
+      "name": "map",
+      "class": "fas fa-map-marked-alt"
+    }
+  ],
+  "about_me": [
+    {
+      "id": 1,
+      "avatar": "https://jigarsable.netlify.app/assets/images/hero.png",
+      "name": "Hoàng Đình Long",
+      "description": "I am a Full-Stack developer based in Pune, India. I am an Information Technology undergraduate from SPPU. I am very passionate about improving my coding skills & developing applications & websites. I build WebApps and Websites using MERN Stack. Working for myself to improve my skills. Love to build Full-Stack clones.",
+      "desc_job": "Full Stack Developer",
+      "age": "20",
+      "phone": "0865257620",
+      "email": "hoanglonggg356@gmail.com",
+      "address": "Từ Liêm"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "school_name": "CĐ FPT",
+      "img_school": "./public/cđfpt.jfif",
+      "description": "Lập trình web",
+      "time": "2019"
+    }
+  ]
+}
