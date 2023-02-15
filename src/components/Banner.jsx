@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 const Banner = () => {
   return (
-    <section className="bg-green-400 w-full  relative flex min-h-screen items-center">
+    <section className=" w-full  relative flex min-h-screen items-center">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -11,10 +13,11 @@ const Banner = () => {
         }}
         className="w-full h-full flex justify-between items-center px-10 pt-20  md:px-20 lg:px-40 overflow-hidden"
       >
-        <motion.div className="overflow-hidden"
+        <motion.div
+          className="overflow-hidden"
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [-10, 0], opacity: 1 }}
-          transition={{ duration: 1 ,delay:0.4 ,ease :"easeInOut"}}
+          transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
         >
           <h2 className="text-4xl pb-3 font-extrabold px-1 py-3 leading-tight">
             Hi There,
@@ -22,13 +25,19 @@ const Banner = () => {
             I'm <span className="text-yellow-700 ">Hoàng Đình Long</span>
             <p className="text-black pt-2.5 font-semibold text-3xl">
               I am into
-              <span className="ml-2  text-red-800 text-[28px]  font-semibold ">
-                Web development
-              </span>
+              <TypeAnimation
+                className="ml-2 text-cyan-800 text-2xl  font-semibold "
+                sequence={["Web Developer", 1000, ""]}
+                speed={1}
+                // Custom Speed from 1-99 - Default Speed: 40
+                style={{ fontSize: "38px" }}
+                wrapper="span" // Animation will be rendered as a <span>
+                repeat={Infinity} // Repeat this Animation Sequence infinitely
+              />
             </p>
           </h2>
           <button className="rounded-3xl bg-blue-700 text-white text-2xl text-center px-5 py-2 my-3">
-            About Me
+            <a href=""> My resume</a>
           </button>
           <div className="flex items-center gap-4 mt-2.5 ">
             <p className="relative bg-slate-800 rounded-[50%] w-12 overflow-hidden  h-12 hover:bg-slate-500">

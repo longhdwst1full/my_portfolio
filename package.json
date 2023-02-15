@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    
     "start-server": "json-server --watch db.json",
     "dev": "concurrently \"json-server --watch db.json\" \"vite\"",
-    "build": "vite build",
+    "build": "vite build concurrently \"json-server db.json\" \"vite\"",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,7 +18,8 @@
     "react-hook-form": "^7.39.3",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
-    "react-toastify": "^9.1.1"
+    "react-toastify": "^9.1.1",
+    "react-type-animation": "^2.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
