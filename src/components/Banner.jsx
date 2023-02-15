@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { AppContext } from "../content";
+
 const Banner = () => {
+  const [icon, setIcon] = useState([]);
+  const [theme] = useContext(AppContext);
+
+  useEffect(() => {
+    setIcon(theme.icon_contacts);
+  }, []);
   return (
     <section className=" w-full  relative flex min-h-screen items-center">
       <motion.div
@@ -32,14 +40,16 @@ const Banner = () => {
                 // Custom Speed from 1-99 - Default Speed: 40
                 style={{ fontSize: "38px" }}
                 wrapper="span" // Animation will be rendered as a <span>
-                repeat={Infinity} // Repeat this Animation Sequence infinitely
+                repeat={Infinity}
               />
             </p>
           </h2>
           <button className="rounded-3xl bg-blue-700 text-white text-2xl text-center px-5 py-2 my-3">
             <a href=""> My resume</a>
           </button>
-          <div className="flex items-center gap-4 mt-2.5 ">
+
+          {/* <div className="flex items-center gap-4 mt-2.5 ">
+            
             <p className="relative bg-slate-800 rounded-[50%] w-12 overflow-hidden  h-12 hover:bg-slate-500">
               <img
                 src="https://jigarsable.netlify.app/assets/images/hero.png"
@@ -47,14 +57,7 @@ const Banner = () => {
                 className="absolute top-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-2/4 z-20 w-2/3 h-2/3 rounded-full "
               />
             </p>
-            <p className="relative bg-slate-800 rounded-[50%] w-12 overflow-hidden  h-12 hover:bg-slate-500">
-              <img
-                src="https://jigarsable.netlify.app/assets/images/hero.png"
-                alt=""
-                className="absolute top-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-2/4 z-20 w-2/3 h-2/3 rounded-full "
-              />
-            </p>
-          </div>
+          </div> */}
         </motion.div>
         <div className="pb-8">
           <img

@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { intance } from "../api";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../content";
 
 const Skill = () => {
+  const [theme] = useContext(AppContext);
+
   const [skill, setSkill] = useState([]);
 
   useEffect(() => {
-    intance.get("/skills").then(({ data }) => setSkill(data));
+  setSkill(theme.skills);
   }, []);
   
   return (
@@ -32,7 +34,7 @@ const Skill = () => {
         
           {skill && skill.map((item) => (
               <div
-                key={item.id}
+                key={`${item.id}hi`}
                 className="hover:shadow-md  p-2.5  rounded-lg shadow-[0_4px_10px_#00000033] bg-[#000016e6] transition-all"
               >
                 <div className="flex flex-col items-center gap-4 mt-4">
@@ -47,18 +49,7 @@ const Skill = () => {
          
           
 
-          <div className="  hover:shadow-md  p-2.5  rounded-lg shadow-[0_4px_10px_#00000033] bg-[#000016e6] transition-all">
-            <div className="flex flex-col items-center gap-4 mt-4">
-              <img
-                className=""
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
-                alt="anh"
-              />
-              <p className="p-2 ml-2 tracking-wide text-white text-xl font-semibold">
-                taildwind
-              </p>
-            </div>
-          </div>
+         
         </motion.div>
       </motion.div>
     </section>

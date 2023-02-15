@@ -1,8 +1,16 @@
 import styles from "./project.module.scss";
 import classNames from "classnames/bind";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../content";
 
 const Project = () => {
+  const [theme] = useContext(AppContext);
+ 
   const cx = classNames.bind(styles);
+  const [project, setProject] = useState([]);
+  useEffect(() => {
+    setProject(theme.projects)
+  }, []);
 
   return (
     <section className={cx("work")} id="work project">
@@ -86,10 +94,36 @@ const Project = () => {
             </div>
           </div>
         </div>
+        {project &&
+          project.map((item) => (
+            <div key={`${item.url_onl}`} className={cx("box")}>
+              <img
+                src={item.image}
+                alt={item.name}
+              />
+              <div className={cx("content")}>
+                <div className={cx("tag")}>
+                  <h3>{item.name}</h3>
+                </div>
+                <div className={cx("desc")}>
+                  <p>{item.description}
+                  </p>
+                  <div className={cx("btns")}>
+                    <a href={item.url_onl} className={cx("btn")}>
+                      <i className="fas fa-eye"></i> View
+                    </a>
+                    <a href={item.url_git} className={cx("btn")}>
+                      Code <i className="fas fa-code"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
       </div>
 
       <div className={cx("viewall")}>
-        <a href="/projects" className={cx("btn")}>
+        <a href="https://github.com/longhdwst1full" className={cx("btn")}>
           <span>View All</span>
           <i className="fas fa-arrow-right"></i>
         </a>

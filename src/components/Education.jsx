@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { intance } from "../api";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../content";
 const Education = () => {
+  const [theme] = useContext(AppContext);
+
   const [education, setEducation] = useState([]);
   useEffect(() => {
-    intance
-      .get("/education")
-      .then(({ data }) => setEducation(data));
+     setEducation(theme.education);
   }, []);
 
   return (
-    <section id="education" className="bg-yellow-500 p-20 pb-10">
+    <section id="education" className="bg-gray-200 p-20 pb-10">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
@@ -26,20 +26,16 @@ const Education = () => {
         </p>
       </motion.div>
 
-      {/* <div className="rounded-md bg-white flex shadow mt-5">
-        <img src="" alt="" />
-      </div> */}
-
-      {education &&
-        education.map((item) => (
-          <div
-            key={item.id}
-            className="max-w-[1200px] m-auto flex flex-col gap-4"
-          >
-            <div className="visible opacity-100 transform transform-[matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)] transition-all flex w-4/5 mt-5 rounded-lg shadow-sm bg-white hover:shadow-xl m-auto">
-              <div className="">
+      <div className="max-w-[1200px] m-auto flex flex-col gap-4 ">
+        {education &&
+          education.map((item,index) => (
+            <div
+              key={`${item.id} ${index}`}
+              className="visible opacity-100 transform transform-[matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)] transition-all flex w-4/5 mt-5 rounded-lg shadow-sm bg-white hover:shadow-xl m-auto"
+            >
+              <div className="max-h-40 overflow-hidden">
                 <img
-                  className="w-full  object-cover relative"
+                  className="w-full   object-cover relative"
                   src={item.img_school}
                   alt=""
                 />
@@ -48,17 +44,15 @@ const Education = () => {
                 <h3 className="text-xl text-[#012970] py-3 font-semibold ">
                   {item.school_name}
                 </h3>
-                <p className="text-base ">
-                  {item.description}
-                </p>
+                <p className="text-base ">{item.description}</p>
                 <h4 className="text-lg text-green-700 font-bold">
-                 {item.time}
+                  {item.time}
                 </h4>
               </div>
             </div>
-          </div>
-        ))}
-      <div className="max-w-[1200px] m-auto flex flex-col gap-4">
+          ))}
+      </div>
+      {/* <div className="max-w-[1200px] m-auto flex flex-col gap-4">
         <div className="visible opacity-100 transform transform-[matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)] transition-all flex w-4/5 mt-5 rounded-lg shadow-sm bg-white hover:shadow-xl m-auto">
           <div className="">
             <img
@@ -99,7 +93,7 @@ const Education = () => {
             </h4>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

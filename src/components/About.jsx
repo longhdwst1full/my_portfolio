@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { intance } from "../api";
+import { AppContext } from "../content";
 
 const About = () => {
+  const [theme] = useContext(AppContext);
+
   const [info, setInfo] = useState([]);
   useEffect(() => {
-    intance.get("/about_me").then(({ data }) => setInfo(data));
+    setInfo(theme.about_me);
   }, []);
 
   return (
-    <div id="about"  className="max-w-[1200px] m-auto py-20 pb-10">
-      <motion.div 
+    <div id="about" className="bg-white m-auto p-20 pb-10">
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
         transition={{

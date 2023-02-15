@@ -1,132 +1,183 @@
 {
-  "skills": [
+  "profile": [
     {
-      "id": "1",
-      "name": "HTML5",
-      "image": "./public/html-5--v1.png"
-    },
-    {
-      "id": "2",
+      "skills": [
+        {
+          "id": "1",
+          "name": "HTML5",
+          "image": "./public/html-5--v1.png"
+        },
+        {
+          "id": "2",
 
-      "name": "CSS3",
-      "image": "./public/css3.png"
-    },
-    {
-      "id": "3",
+          "name": "CSS3",
+          "image": "./public/css3.png"
+        },
+        {
+          "id": "3",
 
-      "name": "JavaScript",
-      "image": "./public/javascript--v1.png"
-    },
-    {
-      "id": "4",
-      "name": "ReactJS",
-      "image": "./public/reactjs_.png"
-    },
-    {
-      "id": 5,
-      "name": "NodeJS",
-      "image": "./public/nodejs.png"
-    },
-    {
-      "id": 6,
-      "name": "Redux",
-      "image": "./public/redux.png"
-    },
-    {
-      "id": 7,
-      "name": "TailwindCSS",
-      "image": "./public/Tailwind_CSS_svg.png"
-    },
-    {
-      "id": 8,
-      "name": "Bootstrap",
-      "image": "./public/bootstrap.png"
-    },
-    {
-      "id": 9,
-      "name": "PHP",
-      "image": "./public/php-logo.png"
-    },
-    {
-      "id": 10,
-      "name": "GitHub",
-      "image": "./public/github.png"
-    },
-    {
-      "id": 11,
-      "name": "PHP",
-      "image": "./public/php-logo.png"
-    }
-  ],
-  "navDetail": [
-   
-    {
-      "name": "About",
-      "path": "/#about"
-    },
-    {
-      "name": "Skill",
-      "path": "/#skill"
-    },
-    {
-      "name": "Project",
-      "path": "/#project"
-    },
-    {
-      "name": "Education",
-      "path": "/#education"
-    },
-    {
-      "name": "Contacts",
-      "path": "/#contact_me"
-    }
-  ],
-  "icon_contacts": [
-    {
-      "name": "GitHub",
-      "class": "fab fa-github"
-    },
-    {
-      "name": "Twitter",
-      "class": "fab fa-twitter"
-    },
-    {
-      "name": "telegram",
-      "class": "fab fa-telegram-plane"
-    },
-    {
-      "name": "mail",
-      "class": "fas fa-envelope"
-    },
-    {
-      "name": "phone",
-      "class": "fas fa-phone"
-    },
-    {
-      "name": "map",
-      "class": "fas fa-map-marked-alt"
-    }
-  ],
-  "about_me": [
-    {
-      "id": 1,
-      "avatar": "https://jigarsable.netlify.app/assets/images/hero.png",
-      "name": "Hoàng Đình Long",
-      "description": "I am a Full-Stack developer based in Pune, India. I am an Information Technology undergraduate from SPPU. I am very passionate about improving my coding skills & developing applications & websites. I build WebApps and Websites using MERN Stack. Working for myself to improve my skills. Love to build Full-Stack clones.",
-      "desc_job": "Full Stack Developer",
-      "age": "20",
-      "phone": "0865257620",
-      "email": "hoanglonggg356@gmail.com",
-      "address": "Từ Liêm"
-    }
-  ],
-  "education": [
-    {
-      "id": 1,
-      "school_name": "CĐ FPT",
-      "img_school": "./public/cđfpt.png",
-      "description": "Lập trình web",
-      "time": "2019"
+          "name": "JavaScript",
+          "image": "./public/javascript--v1.png"
+        },
+        {
+          "id": "4",
+          "name": "ReactJS",
+          "image": "./public/reactjs_.png"
+        },
+        {
+          "id": 5,
+          "name": "NodeJS",
+          "image": "./public/nodejs.png"
+        },
+        {
+          "id": 6,
+          "name": "Redux",
+          "image": "./public/redux.png"
+        },
+        {
+          "id": 7,
+          "name": "TailwindCSS",
+          "image": "./public/Tailwind_CSS_svg.png"
+        },
+        {
+          "id": 8,
+          "name": "Bootstrap",
+          "image": "./public/bootstrap.png"
+        },
+        {
+          "id": 9,
+          "name": "PHP",
+          "image": "./public/php-logo.png"
+        },
+        {
+          "id": 10,
+          "name": "GitHub",
+          "image": "./public/github.png"
+        },
+        {
+          "id": 11,
+          "name": "PHP",
+          "image": "./public/php-logo.png"
+        }
+      ],
+      "navDetail": [
+        {
+          "name": "About",
+          "path": "/#about"
+        },
+        {
+          "name": "Skill",
+          "path": "/#skill"
+        },
+        {
+          "name": "Project",
+          "path": "/#project"
+        },
+        {
+          "name": "Education",
+          "path": "/#education"
+        },
+        {
+          "name": "Contacts",
+          "path": "/#contact_me"
+        }
+      ],
+      "icon_contacts": [
+        {
+          "id": 1,
+          "name": "Hoàng Long",
+          "link": "https://www.facebook.com/profile.php?id=100042337223043",
+          "class": "fab fa-facebook-f  ",
+          "show": "true"
+        },
+        {
+          "id": 2,
+          "name": "GitHub",
+          "link": "https://github.com/longhdwst1full",
+          "class": "fab fa-github ",
+          "show": "true"
+        },
+        {
+          "id": 3,
+          "name": "Hoàng Long",
+          "class": "fab fa-telegram-plane",
+          "show": "true"
+        },
+        {
+          "id": 4,
+          "name": "hoanglonggg356@gmail.com",
+          "class": "fas fa-envelope",
+          "show": "true"
+        },
+        {
+          "id": 5,
+          "name": "0865257620",
+          "class": "fas fa-phone"
+        }
+      ],
+      "about_me": [
+        {
+          "id": 1,
+          "avatar": "https://jigarsable.netlify.app/assets/images/hero.png",
+          "name": "Hoàng Đình Long",
+          "description": "I am a Full-Stack developer based in Pune, India. I am an Information Technology undergraduate from SPPU. I am very passionate about improving my coding skills & developing applications & websites. I build WebApps and Websites using MERN Stack. Working for myself to improve my skills. Love to build Full-Stack clones.",
+          "desc_job": "Full Stack Developer",
+          "age": "20",
+          "phone": "0865257620",
+          "email": "hoanglonggg356@gmail.com",
+          "address": "Từ Liêm"
+        }
+      ],
+      "education": [
+        {
+          "id": 1,
+          "school_name": "CĐ FPT",
+          "img_school": "./public/cđfpt.png",
+          "description": "Lập trình web",
+          "time": "2019"
+        },
+        {
+          "id": 2,
+          "school_name": "CĐ FPT",
+          "img_school": "./public/cđfpt.png",
+          "description": "Lập trình web",
+          "time": "2019"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Realtime Chat Application",
+          "image": "https://jigarsable.netlify.app/assets/images/hero.png",
+          "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
+          "skii": ["reactjs", "firebase"],
+          "url_onl": "https://chat-app-gray-gamma.vercel.app/login",
+          "url_git": "https://github.com/longhdwst1full/Chat_app",
+          "created_at": "11/2/2023"
+        },
+
+        {
+          "id": 2,
+          "name": "Spotyfy Application",
+          "image": "./src/image/spotyfi.png",
+          "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
+          "skii": ["reactjs"],
+          "url_onl": "https://spotyfi-app.vercel.app/",
+          "url_git": "https://github.com/longhdwst1full/spotyfi_app",
+          "created_at": "10/2/2023"
+        },
+
+        {
+          "id": 2,
+          "name": "Shoppe Application",
+          "image": "./src/image/spotyfi.png",
+          "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
+          "skii": ["reactjs", "typescript", "react query"],
+          "url_onl": "https://shoppe-app.vercel.app/",
+          "url_git": "https://github.com/longhdwst1full/spotyfi_app",
+          "created_at": "10/2/2023"
+        }
+      ]
     }
   ]
 }
