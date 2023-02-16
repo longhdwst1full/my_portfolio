@@ -6,7 +6,7 @@ import { AppContext } from "../content";
 const Banner = () => {
   const [icon, setIcon] = useState([]);
   const [theme] = useContext(AppContext);
-
+  const cv = theme?.cv;
   useEffect(() => {
     setIcon(theme.icon_contacts);
   }, []);
@@ -45,7 +45,7 @@ const Banner = () => {
             </p>
           </h2>
           <button className="rounded-3xl bg-blue-700 text-white text-2xl text-center px-5 py-2 my-3">
-            <a href=""> My resume</a>
+            <a href={cv}> My resume</a>
           </button>
 
           {/* <div className="flex items-center gap-4 mt-2.5 ">

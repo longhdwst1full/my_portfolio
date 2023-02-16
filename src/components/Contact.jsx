@@ -1,13 +1,30 @@
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../content";
+import { useForm } from "react-hook-form";
+
 const Contact = () => {
-  const [theme] = useContext(AppContext);
+  
+  const theme = useContext(AppContext);
+  console.log(theme)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  
+  };
 
   const [icon, setIcon] = useState([]);
   useEffect(() => {
     setIcon(theme.icon_contacts);
   }, []);
+
+
+
   return (
     <section className="p-20 pb-10" id="contact_me">
       <motion.div
@@ -53,47 +70,76 @@ const Contact = () => {
             />
           </div>
           <div className="text-center p-5 w-[50%] mr-8">
-            <form action="" className="">
+            <form onSubmit={handleSubmit(onSubmit)} className="">
               <motion.div
                 initial={{ x: 0, opacity: 0 }}
                 whileInView={{ x: [240, 0], opacity: 1 }}
                 className="flex flex-col justify-center items-center"
               >
-                <div className="flex flex-wrap-reverse h-[50px] relative w-full m-4">
-                  <input
-                    className="h-full outline-none pr-4 pl-12  w-full rounded-xl border border-gray-700 bg-blue-300 text-black  focus:pl-12 focus:border-[2px]"
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                  />
-                  <i className="fas fa-user  absolute top-1/2 left-[18px] text-black font-bold text-lg -translate-y-1/2 "></i>
+                <div className="w-full m-4 flex flex-col flex-wrap-reverse ">
+                  <div className="flex flex-wrap-reverse h-[50px] relative w-full ml-4">
+                    <input
+                      {...register("name", { required: true })}
+                      className="h-full outline-none pr-4 pl-12  w-full rounded-xl border border-gray-700 bg-blue-300 text-black  focus:pl-12 focus:border-[2px]"
+                      type="text"
+                      placeholder="Name"
+                    />
+                    <i className="fas fa-user  absolute top-1/2 left-[18px] text-black font-bold text-lg -translate-y-1/2 "></i>
+                  </div>
+
+                  {errors.name && (
+                    <span className="text-red-500">Name is required</span>
+                  )}
                 </div>
-                <div className="flex flex-wrap-reverse h-[50px] relative w-full m-4">
-                  <input
-                    className="h-full outline-none  pr-4 pl-12  w-full rounded-xl border border-gray-700 bg-blue-300 text-black  focus:pl-12 focus:border-[2px]"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                  />
-                  <i className="fas fa-envelope  absolute top-1/2 left-[18px] text-black font-bold text-lg -translate-y-1/2 "></i>
+                <div className="w-full m-4 flex flex-col flex-wrap-reverse ">
+                  <div className="flex flex-wrap-reverse h-[50px] relative w-full ml-4">
+                    <input
+                      className="h-full outline-none  pr-4 pl-12  w-full rounded-xl border border-gray-700 bg-blue-300 text-black  focus:pl-12 focus:border-[2px]"
+                      type="email"
+                      {...register("email", {
+                        required: true,
+                        pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                      })}
+                      placeholder="Email"
+                    />
+                    <i className="fas fa-envelope  absolute top-1/2 left-[18px] text-black font-bold text-lg -translate-y-1/2 "></i>
+                  </div>
+
+                  {errors.email && errors.email.type === "required" && (
+                    <p className="text-red-500">Email is required</p>
+                  )}
+                  {errors.email && errors.email.type === "pattern" && (
+                    <p className="text-red-500">Invalid email format</p>
+                  )}
                 </div>
-                <div className="flex flex-wrap-reverse h-[50px] relative w-full m-4">
-                  <input
-                    className="h-full outline-none  pr-4 pl-12  w-full rounded-xl border border-gray-700 p-3 bg-blue-300 text-black  focus:pl-12 focus:border-[2px]"
-                    type="text"
-                    name="phone"
-                    placeholder="Phone"
-                  />
-                  <i className="fas fa-phone-alt absolute top-1/2 left-[18px] text-black font-bold text-lg -translate-y-1/2 "></i>
+                <div className="w-full m-4 flex flex-col flex-wrap-reverse ">
+                  <div className="flex flex-wrap-reverse h-[50px] relative w-full ml-4">
+                    <input
+                      className="h-full outline-none  pr-4 pl-12  w-full rounded-xl border border-gray-700 p-3 bg-blue-300 text-black  focus:pl-12 focus:border-[2px]"
+                      type="text"
+                      {...register("phone", { required: true })}
+                      placeholder="Phone"
+                    />
+                    <i className="fas fa-phone-alt absolute top-1/2 left-[18px] text-black font-bold text-lg -translate-y-1/2 "></i>
+                  </div>
+                  {errors.phone && (
+                    <p className="text-red-500">Phone is required</p>
+                  )}
                 </div>
 
-                <div className="flex flex-wrap-reverse relative w-full m-4 text-black">
-                  <textarea
-                    placeholder="Message"
-                    name="message"
-                    className="min-h-[130px] rounded-xl outline-none  max-h-[230px] bg-blue-300 max-w-full min-w-full pl-12 pt-3 pr-5 border-[1px]  border-gray-700 focus:border-[2px]"
-                  ></textarea>
-                  <i className="absolute top-6 text-lg left-4 fas fa-comment-dots"></i>
+                <div className="w-full m-4 flex flex-col flex-wrap-reverse ">
+                  <div className="flex flex-wrap-reverse relative w-full ml-4 text-black">
+                    <textarea
+                      placeholder="Message"
+                      name="message"
+                      {...register("message", { required: true })}
+                      className="min-h-[130px] rounded-xl outline-none  max-h-[230px] bg-blue-300 max-w-full min-w-full pl-12 pt-3 pr-5 border-[1px]  border-gray-700 focus:border-[2px]"
+                    ></textarea>
+                    <i className="absolute top-6 text-lg left-4 fas fa-comment-dots"></i>
+                  </div>
+                  {errors.message && (
+                    <p className="text-red-500">Message is required</p>
+                  )}
                 </div>
                 <button className="flex-end float-right text-white outline-none text-xl cursor-pointer rounded-md py-3 px-6 bg-[#2506ad] shadow-[0px_5px_10px_#3044f799] transition-all delay-[0.3s] hover:bg-[#421cecf5]  ">
                   Submit

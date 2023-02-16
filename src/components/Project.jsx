@@ -5,15 +5,15 @@ import { AppContext } from "../content";
 
 const Project = () => {
   const [theme] = useContext(AppContext);
- 
+
   const cx = classNames.bind(styles);
   const [project, setProject] = useState([]);
   useEffect(() => {
-    setProject(theme.projects)
+    setProject(theme.projects);
   }, []);
 
   return (
-    <section className={cx("work")} id="work project">
+    <section className={`${cx("work")} pt-20 `} id="project">
       <h2 className={cx("heading")}>
         <i className="fas fa-laptop-code"></i> Projects <span>Made</span>
       </h2>
@@ -97,17 +97,13 @@ const Project = () => {
         {project &&
           project.map((item) => (
             <div key={`${item.url_onl}`} className={cx("box")}>
-              <img
-                src={item.image}
-                alt={item.name}
-              />
+              <img src={item.image} alt={item.name} />
               <div className={cx("content")}>
                 <div className={cx("tag")}>
                   <h3>{item.name}</h3>
                 </div>
                 <div className={cx("desc")}>
-                  <p>{item.description}
-                  </p>
+                  <p>{item.description}</p>
                   <div className={cx("btns")}>
                     <a href={item.url_onl} className={cx("btn")}>
                       <i className="fas fa-eye"></i> View

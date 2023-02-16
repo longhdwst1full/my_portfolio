@@ -1,6 +1,7 @@
 {
   "profile": [
     {
+      "cv":"https://drive.google.com/file/d/1wIl7jOwPrrqAi-BA799E59543ZMc-Jtr/view",
       "skills": [
         {
           "id": "1",
@@ -168,7 +169,7 @@
         },
 
         {
-          "id": 2,
+          "id": 3,
           "name": "Shoppe Application",
           "image": "./src/image/spotyfi.png",
           "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
