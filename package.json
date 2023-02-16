@@ -6,7 +6,7 @@
   "scripts": {
     "start-server": "json-server --watch db.json",
     "dev": "concurrently \"json-server --watch db.json\" \"vite\"",
-    "build": "vite build concurrently \"json-server db.json\" \"vite\"",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
