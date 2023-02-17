@@ -1,64 +1,64 @@
 {
   "profile": [
     {
-      "cv":"https://drive.google.com/file/d/1wIl7jOwPrrqAi-BA799E59543ZMc-Jtr/view",
+      "cv": "https://drive.google.com/file/d/1wIl7jOwPrrqAi-BA799E59543ZMc-Jtr/view",
       "skills": [
         {
           "id": "1",
           "name": "HTML5",
-          "image": "./public/html-5--v1.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/html-5--v1_phmicg.png"
         },
         {
           "id": "2",
 
           "name": "CSS3",
-          "image": "./public/css3.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/css3_taqsy4.png"
         },
         {
           "id": "3",
 
           "name": "JavaScript",
-          "image": "./public/javascript--v1.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/javascript--v1_o2p9wl.png"
         },
         {
           "id": "4",
           "name": "ReactJS",
-          "image": "./public/reactjs_.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/reactjs__a3w9ts.png"
         },
         {
           "id": 5,
           "name": "NodeJS",
-          "image": "./public/nodejs.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/nodejs_gywdyg.png"
         },
         {
           "id": 6,
           "name": "Redux",
-          "image": "./public/redux.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/redux_r927rb.png"
         },
         {
           "id": 7,
           "name": "TailwindCSS",
-          "image": "./public/Tailwind_CSS_svg.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/Tailwind_CSS_svg_m5zv7d.png"
         },
         {
           "id": 8,
           "name": "Bootstrap",
-          "image": "./public/bootstrap.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/bootstrap_drzda2.png"
         },
         {
           "id": 9,
           "name": "PHP",
-          "image": "./public/php-logo.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643459/my-portfolio/php-logo_mexmns.png"
         },
         {
           "id": 10,
           "name": "GitHub",
-          "image": "./public/github.png"
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/github_aom9zr.png"
         },
         {
           "id": 11,
-          "name": "PHP",
-          "image": "./public/php-logo.png"
+          "name": "MongoDB",
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/mongodb_esbxyo.png"
         }
       ],
       "navDetail": [
@@ -133,14 +133,14 @@
         {
           "id": 1,
           "school_name": "CĐ FPT",
-          "img_school": "./public/cđfpt.png",
+          "img_school": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/c%C4%91fpt_bpg7ql.jpg",
           "description": "Lập trình web",
           "time": "2019"
         },
         {
           "id": 2,
           "school_name": "CĐ FPT",
-          "img_school": "./public/cđfpt.png",
+          "img_school": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/c%C4%91fpt_bpg7ql.jpg",
           "description": "Lập trình web",
           "time": "2019"
         }
@@ -160,7 +160,7 @@
         {
           "id": 2,
           "name": "Spotyfy Application",
-          "image": "./src/image/spotyfi.png",
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/c_scale,w_1305/v1676644270/my-portfolio/spotyfi_otryde.png",
           "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
           "skii": ["reactjs"],
           "url_onl": "https://spotyfi-app.vercel.app/",
@@ -171,11 +171,11 @@
         {
           "id": 3,
           "name": "Shoppe Application",
-          "image": "./src/image/spotyfi.png",
+          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676644270/my-portfolio/spotyfi_otryde.png",
           "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
           "skii": ["reactjs", "typescript", "react query"],
           "url_onl": "https://shoppe-app.vercel.app/",
-          "url_git": "https://github.com/longhdwst1full/spotyfi_app",
+          "url_git": "https://github.com/longhdwst1full/Shoppe-App",
           "created_at": "10/2/2023"
         }
       ]
