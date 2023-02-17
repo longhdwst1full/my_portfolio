@@ -12,8 +12,12 @@ const Education = () => {
   return (
     <section id="education" className="bg-gray-200 p-20 pb-10">
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ y: [-50, 0], opacity: 1 }}
+         initial={{ opacity: 0 }}
+         whileInView={{ y: [-50, 0], opacity: 1 }}
+         transition={{
+           duration: 1,
+           // delay: 0.7,
+           ease: [0, 0.71, 0.2, 1.01], }}
         className="text-center"
       >
         <h2 className="text-4xl text-black  font-bold ">

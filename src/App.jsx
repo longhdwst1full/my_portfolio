@@ -53,7 +53,7 @@ export default function App() {
           <Header
             children={
               <motion.div
-                className="fixed top-[60px] left-0 z-10 right-0  h-1 bg-amber-500 origin-[0%]"
+                className="absolute top-[100%] left-0 z-10 right-0  h-1 bg-amber-500 origin-[0%]"
                 style={{ scaleX }}
               />
             }

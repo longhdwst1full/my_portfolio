@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { intance } from "../api";
 import { AppContext } from "../content";
+import styles from "./about.module.scss";
+import classNames from "classnames/bind";
 
 const About = () => {
+  const cx = classNames.bind(styles);
   const [theme] = useContext(AppContext);
+  const cv = theme?.cv;
 
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -12,7 +15,7 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about" className="bg-white m-auto p-20 pb-10">
+    <div id="about" className="bg-gradient-to-r from-[#5bb94254] via-[#60ff827a] to-[#97ce1600] m-auto p-20 pb-10">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
@@ -30,19 +33,18 @@ const About = () => {
       </motion.div>
       {info &&
         info.map((item) => (
-          <div
-            key={item.id}
-            className="p-10 grid grid-cols-2 gap-x-4 place-items-center"
-          >
+          <div key={item.id} className={`${cx("row")} p-1.5 mx-auto my-4  rounded-xl `}>
+          
             <motion.div
-              className="m-10 rounded-3xl overflow-hidden shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
+              className={cx("image")}
               initial={{ x: 0, opacity: 0 }}
               whileInView={{ x: [-240, 0], opacity: 1 }}
               transition={{ duration: 1 }}
             >
               <img
                 src={item.avatar}
-                className="w-full hover:shadow-xl hover:from-transparent cursor-pointer"
+                className={cx("tilt")}
+                // className="w-[20rem] rounded-xl m-auto h-auto ml-[100px] hover:shadow-xl hover:from-transparent cursor-pointer"
                 alt={item.name}
               />
             </motion.div>
@@ -50,10 +52,10 @@ const About = () => {
               initial={{ x: 0, opacity: 0 }}
               whileInView={{ x: [250, 0], opacity: 1 }}
               transition={{ duration: 1 }}
-              className="p-7.5"
+              className={cx("content")}
             >
               <h1 className="text-3xl font-bold">I'm {item.name}</h1>
-              <p className="font-bold my-1">{item.desc_job}</p>
+              <p className={cx("tag")}>{item.desc_job}</p>
               <p>{item.description}</p>
               <div className="grid grid-cols-2">
                 <div>
@@ -62,7 +64,9 @@ const About = () => {
                     {item.age}
                   </p>
                   <p className="mt-4 font-semibold">
-                    <span className="text-[#011aff] font-normal ">Phone :</span>
+                    <span className="text-[#011aff] font-normal ">
+                      Phone :{" "}
+                    </span>
                     {item.phone}
                   </p>
                 </div>
@@ -78,7 +82,7 @@ const About = () => {
                 </div>
               </div>
               <button className="bg-[#2506ad] mt-10 py-4 text-white px-7 text-lg font-semibold rounded-xl shadow-[0px_5px_10px_rgb(48_68_247_/_60%)]">
-                Resume &gt;
+              <a href={cv}>  Resume &gt;</a>
               </button>
             </motion.div>
           </div>
