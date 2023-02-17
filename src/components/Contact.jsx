@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 
 const Contact = () => {
   
-  const theme = useContext(AppContext);
-  console.log(theme)
+  const [theme] = useContext(AppContext);
+
   const {
     register,
     handleSubmit,
@@ -21,6 +21,7 @@ const Contact = () => {
   const [icon, setIcon] = useState([]);
   useEffect(() => {
     setIcon(theme.icon_contacts);
+    // console.log(icon)
   }, []);
 
 
@@ -57,7 +58,7 @@ const Contact = () => {
       </div>
       <div className="max-w-[1200px] m-auto rounded-3xl bg-white shadow mt-10 p-10  ">
         <h1 className="py-3 text-center  text-3xl font-semibold  text-stone-800">
-          Leave a message
+          Leave A Message
         </h1>
         <div className="flex justify-between items-center flex-wrap">
           <div className=" max-w-[60%] ml-4">
