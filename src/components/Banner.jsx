@@ -59,9 +59,9 @@ const Banner = () => {
             </p>
           </div> */}
         </motion.div>
-        <div className="pb-8">
+        <div className="pb-8 w-[50%]">
           <img
-            src="https://jigarsable.netlify.app/assets/images/hero.png"
+            src="https://res.cloudinary.com/dy1jlseae/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1676643455/my-portfolio/dev-ed-wave_opmp9k.png"
             className="w-full rounded-full shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
             alt=""
           />
