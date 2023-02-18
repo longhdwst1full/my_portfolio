@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const intance = axios.create({
-  baseURL: "https://k35qgv.sse.codesandbox.io",
+  baseURL: "https://63ecac6331ef61473b26c1ad.mockapi.io",
 });
 intance.interceptors.response.use(
   function (response) {

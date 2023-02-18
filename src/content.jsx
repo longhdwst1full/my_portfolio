@@ -10,10 +10,10 @@ export const AppProvider = ({ children }) => {
     // fetch("https://k35qgv.sse.codesandbox.io/profile")
     // .then((response) => response.json())
     intance
-      .get("/profile")
+      .get("/project")
       .then((data) => setData(data))
-      .catch((err) => console.log(err));
-  }, [data]);
-  // console.log("data set ",data);
+      // .catch((err) => console.log(err));
+  },[]);
+
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };
