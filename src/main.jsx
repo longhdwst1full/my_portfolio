@@ -7,24 +7,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import Upload from "./components/Upload";
 import NotFound from "./components/NotFound";
-// const Data_Json = createContext(null);
 
-// function RootComponent() {
-//   const [data, setData] = useState([]);
-//   useEffect(() => {
-//     intance.get("/profile").then((response) => {
-//       setData(response);
-//     });
-//   }, []);
-
-//   return (
-//     <Data_Json.Provider value={ data }>
-//       <AppProvider>
-//         <App />
-//       </AppProvider>
-//     </Data_Json.Provider>
-//   );
-// }
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
