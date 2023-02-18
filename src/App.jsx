@@ -50,21 +50,21 @@ export default function App() {
       )}
       {!isloading && (
         <div className="bg-[#edf9fe] relative overflow-hidden">
-          <Header
+          {/* <Header
             children={
               <motion.div
                 className="absolute top-[100%] left-0 z-10 right-0  h-1 bg-amber-500 origin-[0%]"
                 style={{ scaleX }}
               />
             }
-          />
-          <Banner />
+          /> */}
+          {/* <Banner />
           <About />
           <Education />
           <Skill />
           <Project />
           <Contact />
-          <Footer />
+          <Footer /> */}
         </div>
       )}
     </>

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AppContext } from "../content";
 const Header = ({ children }) => {
   const theme = useContext(AppContext);
@@ -17,8 +18,8 @@ const Header = ({ children }) => {
       {children}
       <div className="max-w-[1200px] shadow-[#92a1b04d] m-auto flex justify-between">
         <div>
-          <a
-            href=""
+          <Link
+            to="/"
             className="text-3xl md:text-3xl font-medium cursor-pointer text-gradient"
             style={{
               color: "transparent",
@@ -29,7 +30,7 @@ const Header = ({ children }) => {
           >
             {" "}
             HĐ.LONG
-          </a>
+          </Link>
         </div>
         <nav className="flex list-none ">
           {menu &&
