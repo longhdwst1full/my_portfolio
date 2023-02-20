@@ -70,7 +70,7 @@ const Contact = () => {
               alt=""
             />
           </div>
-          <div className="text-center p-5 w-[50%] mr-8">
+          <div className="text-center p-5 lg:w-[50%] sm:w-full mr-8 sm:m-auto">
             <form onSubmit={handleSubmit(onSubmit)} className="">
               <motion.div
                 initial={{ x: 0, opacity: 0 }}

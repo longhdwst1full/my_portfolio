@@ -10,7 +10,7 @@ const Education = () => {
   }, []);
 
   return (
-    <section id="education" className="bg-gray-200 p-20 pb-10">
+    <section id="education" className="bg-gray-200 py-20 px-20 sm:px-10 pb-10 sm:text-center">
       <motion.div
          initial={{ opacity: 0 }}
          whileInView={{ y: [-50, 0], opacity: 1 }}
@@ -20,7 +20,7 @@ const Education = () => {
            ease: [0, 0.71, 0.2, 1.01], }}
         className="text-center"
       >
-        <h2 className="text-4xl text-black  font-bold ">
+        <h2 className="lg:text-4xl sm:text-3xl text-black  font-bold ">
           <i className="fas fa-graduation-cap mr-4"></i>
           My <span className="text-[#7303A7]"> Education</span>
         </h2>
@@ -30,16 +30,16 @@ const Education = () => {
         </p>
       </motion.div>
 
-      <div className="max-w-[1200px] m-auto flex flex-col gap-4 ">
+      <div className=" m-auto flex flex-col gap-4 ">
         {education &&
           education.map((item,index) => (
             <div
               key={`${item.id} ${index}`}
-              className="visible opacity-100 transform transform-[matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)] transition-all flex w-4/5 mt-5 rounded-lg shadow-sm bg-white hover:shadow-xl m-auto"
+              className="visible opacity-100 transform transform-[matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)] transition-all flex lg:w-4/5 md:w-full sm:w-full mt-5 rounded-lg shadow-sm bg-white hover:shadow-xl m-auto"
             >
-              <div className="max-h-40 overflow-hidden">
+              <div className="lg:max-h-48 overflow-hidden">
                 <img
-                  className="w-full   object-cover relative"
+                  className="w-full h-full  object-cover relative"
                   src={item.img_school}
                   alt=""
                 />

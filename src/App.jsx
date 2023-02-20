@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import About from "./components/About";
@@ -9,9 +9,30 @@ import Education from "./components/Education";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Contact from "./components/Contact";
 import Project from "./components/Project";
+import BackToTop from "./components/BackToTop";
 
 export default function App() {
   const [isloading, setIsLoading] = useState(true);
+  // const [showScroll, setShowScroll] = useState(false);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
+
+  // const handleScroll = () => {
+  //   if (window.pageYOffset > 200) {
+  //     console.log(window.pageYOffset);
+  //     setShowScroll(true);
+  //   } else {
+  //     setShowScroll(false);
+  //   }
+  // };
+
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -59,6 +80,8 @@ export default function App() {
             }
           />
           <Banner />
+
+          <BackToTop />
           <About />
           <Education />
           <Skill />

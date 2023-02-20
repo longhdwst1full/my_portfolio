@@ -10,17 +10,17 @@ const Header = ({ children }) => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 py-4  font-bold bg-white text-black w-full  m-auto shadow-[#31383e4d] shadow-2xl z-40 backdrop-blur-3xl "
+      className="fixed top-0 left-0 right-0 py-4  font-bold bg-white text-black w-full  m-auto shadow-[#31383e4d] shadow-2xl z-40 backdrop-blur-3xl px-10 sm:px-20 lg:px-32 "
       style={{
         backdropFilter: "blur(10px)",
       }}
     >
       {children}
-      <div className="max-w-[1200px] shadow-[#92a1b04d] m-auto flex justify-between">
+      <div className=" shadow-[#92a1b04d] m-auto flex justify-between">
         <div>
           <Link
             to="/"
-            className="text-3xl md:text-3xl font-medium cursor-pointer text-gradient"
+            className=" sm:text-2xl lg:text-3xl font-medium cursor-pointer text-gradient"
             style={{
               color: "transparent",
               WebkitBackgroundClip: "text",

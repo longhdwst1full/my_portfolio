@@ -25,13 +25,13 @@ const Skill = () => {
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
-        <h2 className="text-4xl text-white text-center font-bold py-6 mb-5">
+        <h2 className="lg:text-4xl sm:text-3xl text-white text-center font-bold py-6 mb-5">
           <i className="fas fa-laptop-code mr-4"></i>
           Skills & <span className="text-[#FFe600]">Abilities</span>
         </h2>
       </motion.div>
       <motion.div
-        className="max-w-[1200px] m-auto bg-[#00001666] rounded-2xl border-gray-800 opacity-75 p-6 mb-4 overflow-hidden "
+        className="lg:max-w-[1200px] md:max-w-3xl m-auto bg-[#00001666] rounded-2xl border-gray-800 opacity-75 p-6 mb-4 overflow-hidden "
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
         transition={{
@@ -39,10 +39,9 @@ const Skill = () => {
           ease: "backInOut",
         }}
       >
-        <motion.div
-          // whileHover={{ scale: 1.1 }}
-          // transition={{ duration: 0.3 }}
-          className="grid grid-cols-6 gap-7 flex-wrap "
+        <div
+        
+          className="grid lg:grid-cols-6 gap-7 flex-wrap md:grid-cols-4 md:gap-6 sm:grid-cols-3 sm:gap-5"
         >
           {skill &&
             skill.map((item) => (
@@ -58,7 +57,7 @@ const Skill = () => {
                 </div>
               </div>
             ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

@@ -1,4 +1,4 @@
-import styles from "./project.module.scss";
+import styles from "./css/project.module.scss";
 import classNames from "classnames/bind";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../content";
