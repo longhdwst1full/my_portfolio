@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { intance } from "../api";
 import { AppContext } from "../content";
 const Header = ({ children }) => {
-  const theme = useContext(AppContext);
+  // const theme = useContext(AppContext);
   const [menu, setMenu] = useState([]);
   useEffect(() => {
-    setMenu(theme[0].navDetail);
+    intance.get("/navDetail").then((data) => setMenu(data));
   }, []);
 
   return (

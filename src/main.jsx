@@ -7,6 +7,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import Upload from "./components/Upload";
 import NotFound from "./components/NotFound";
+import Admin from "./admin";
 
 
 createRoot(document.getElementById("root")).render(
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/up_anh" element={<Upload />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <App /> */}

@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
+import { intance } from "../api";
 import { AppContext } from "../content";
 
 const Skill = () => {
-  const [theme] = useContext(AppContext);
+  // const [theme] = useContext(AppContext);
 
   const [skill, setSkill] = useState([]);
 
   useEffect(() => {
-    setSkill(theme.skills);
+    intance.get("/skills").then((data) =>  setSkill(data))
   }, []);
 
   return (

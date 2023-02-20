@@ -3,19 +3,26 @@ import { motion } from "framer-motion";
 import { AppContext } from "../content";
 import styles from "./css/about.module.scss";
 import classNames from "classnames/bind";
+import { intance } from "../api";
 
 const About = () => {
   const cx = classNames.bind(styles);
-  const [theme] = useContext(AppContext);
-  const cv = theme?.cv;
+
 
   const [info, setInfo] = useState([]);
   useEffect(() => {
-    setInfo(theme.about_me);
+    intance.get("/about_me").then((data) =>{
+      // console.log(data)
+      setInfo(data)
+    } )
+
   }, []);
 
   return (
-    <div id="about" className="bg-gradient-to-r from-[#5bb94254] via-[#60ff827a] to-[#97ce1600] m-auto p-20 pb-10">
+    <div
+      id="about"
+      className="bg-gradient-to-r from-[#5bb94254] via-[#60ff827a] to-[#97ce1600] m-auto p-20 pb-10"
+    >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
@@ -33,8 +40,12 @@ const About = () => {
       </motion.div>
       {info &&
         info.map((item) => (
-          <div key={item.id} className={`${cx("row")} p-1.5 mx-auto my-4  rounded-xl sm:text-center`}>
-          
+          <div
+            key={item.id}
+            className={`${cx(
+              "row"
+            )} p-1.5 mx-auto my-4  rounded-xl sm:text-center`}
+          >
             <motion.div
               className={`${cx("image")} sm:ml-5 sm:mt-8`}
               initial={{ x: 0, opacity: 0 }}
@@ -44,7 +55,7 @@ const About = () => {
               <img
                 src={item.avatar}
                 className={`${cx("tilt")} sm:ml-5`}
-                // className="w-[20rem] rounded-xl m-auto h-auto ml-[100px] hover:shadow-xl hover:from-transparent cursor-pointer"
+                
                 alt={item.name}
               />
             </motion.div>
@@ -54,7 +65,9 @@ const About = () => {
               transition={{ duration: 1 }}
               className={`${cx("content")} sm:text-justify`}
             >
-              <h1 className="lg:text-3xl sm:text-2xl font-bold">I'm {item.name}</h1>
+              <h1 className="lg:text-3xl sm:text-2xl font-bold">
+                I'm {item.name}
+              </h1>
               <p className={cx("tag")}>{item.desc_job}</p>
               <p>{item.description}</p>
               <div className="grid grid-cols-2">
@@ -82,7 +95,10 @@ const About = () => {
                 </div>
               </div>
               <button className="bg-[#2506ad] mt-10 py-4 text-white px-7 text-lg font-semibold rounded-xl shadow-[0px_5px_10px_rgb(48_68_247_/_60%)]">
-              <a href={cv} className="">  Resume &gt;</a>
+                <a href={item.cv} className="">
+                  {" "}
+                  Resume &gt;
+                </a>
               </button>
             </motion.div>
           </div>

@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { intance } from "../api";
 import { AppContext } from "../content";
 
 const Banner = () => {
   const [icon, setIcon] = useState([]);
-  const [theme] = useContext(AppContext);
-  const cv = theme?.cv;
+  // const [theme] = useContext(AppContext);
+  // const cv = theme?.cv;
   useEffect(() => {
-    setIcon(theme.icon_contacts);
+    intance.get("/icon_contacts").then((data) => setIcon(data));
   }, []);
   return (
     <section className=" w-full  relative flex min-h-screen items-center">
@@ -32,7 +33,7 @@ const Banner = () => {
             <br />
             I'm <span className="text-yellow-700 ">Hoàng Đình Long</span>
             <p className="text-black pt-2.5 font-semibold text-3xl">
-              I am 
+              I am
               <TypeAnimation
                 className="ml-2 text-cyan-800 text-2xl  font-semibold "
                 sequence={["Web Developer", 1000, ""]}
@@ -45,10 +46,8 @@ const Banner = () => {
             </p>
           </h2>
           <button className="rounded-3xl bg-blue-700 text-white text-2xl text-center px-5 py-2 my-3">
-            <a href={cv}> My resume</a>
+            <a href=''> My resume</a>
           </button>
-
-       
         </motion.div>
         <div className="pb-8 w-[45%] flex-grow-0 m-auto pt-3 max-w-4/6">
           <img

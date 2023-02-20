@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
     // fetch("https://k35qgv.sse.codesandbox.io/profile")
     // .then((response) => response.json())
     intance
-      .get("/project")
+      .get("/navDetail")
       .then((data) => setData(data))
       // .catch((err) => console.log(err));
   },[]);

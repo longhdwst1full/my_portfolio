@@ -3,14 +3,15 @@ import classNames from "classnames/bind";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../content";
 import { motion } from "framer-motion";
+import { intance } from "../api";
 
 const Project = () => {
-  const [theme] = useContext(AppContext);
+  // const [theme] = useContext(AppContext);
 
   const cx = classNames.bind(styles);
   const [project, setProject] = useState([]);
   useEffect(() => {
-    setProject(theme.projects);
+    intance.get("/projects").then((data) => setProject(data))
   }, []);
 
   return (

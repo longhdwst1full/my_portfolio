@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
+import { intance } from "../api";
 import { AppContext } from "../content";
 const Education = () => {
-  const [theme] = useContext(AppContext);
+  // const [theme] = useContext(AppContext);
 
   const [education, setEducation] = useState([]);
   useEffect(() => {
-     setEducation(theme.education);
+    intance.get("/education").then((data) =>setEducation(data))
   }, []);
 
   return (

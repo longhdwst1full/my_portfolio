@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../content";
 import { useForm } from "react-hook-form";
+import { intance } from "../api";
 
 const Contact = () => {
-  
-  const [theme] = useContext(AppContext);
+  // const [theme] = useContext(AppContext);
 
   const {
     register,
@@ -15,16 +15,13 @@ const Contact = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-  
   };
 
   const [icon, setIcon] = useState([]);
   useEffect(() => {
-    setIcon(theme.icon_contacts);
+    intance.get("/icon_contacts").then((data) => setIcon(data));
     // console.log(icon)
   }, []);
-
-
 
   return (
     <section className="p-20 pb-10" id="contact_me">
