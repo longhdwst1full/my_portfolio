@@ -1,13 +1,19 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+
 import { createRoot } from "react-dom/client";
-import { intance } from "./api";
 import App from "./App";
 import { AppProvider } from "./content";
 import "./index.css";
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import Upload from "./components/Upload";
 import NotFound from "./components/NotFound";
 import Admin from "./admin";
+import Dashboard from "./admin/Dashboard";
+import ProjectAdmin from "./admin/Project/ProjectAdmin";
+import User from "./admin/user/User";
 
 
 createRoot(document.getElementById("root")).render(
@@ -17,7 +23,15 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/up_anh" element={<Upload />} />
-          <Route path="/admin" element={<Admin />} />
+
+          <Route path="/admin/" element={<Admin />}>
+            <Route path=":id/dashboard" element={<ProjectAdmin />} />
+            <Route path="dashboard" element={<ProjectAdmin />} />
+          
+            <Route path="user" element={<User />} />
+            <Route path="useredit/:id" element={<User />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <App /> */}
