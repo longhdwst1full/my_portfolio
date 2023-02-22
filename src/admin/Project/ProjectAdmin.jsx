@@ -16,10 +16,10 @@ export default function ProjectAdmin() {
     }
   };
   const handleStartEditProject = (id) => {
-    // if (!id) {
+    if (id) {
     const projectEdit = listProject.find((project) => project.id == id);
     setCurrentProject(projectEdit);
-    // }
+    }
   };
   return (
     <div className="">

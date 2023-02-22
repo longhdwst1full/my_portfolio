@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { useMatch, useParams } from "react-router-dom";
+import { redirect, useMatch, useParams   } from "react-router-dom";
 import { intance } from "../../api";
-
 const initialState = {
   id: "",
   name: "",
@@ -14,6 +13,7 @@ const initialState = {
 };
 export default function AddProject({ currentProject }) {
   // console.log(currentProject);
+  // const history = useHistory();
   const [formData, setFormData] = useState(initialState);
   const [skillID, setSkillId] = useState([]);
   const [file, setFile] = useState(null);
@@ -54,16 +54,17 @@ export default function AddProject({ currentProject }) {
   useEffect(() => {
     if (!isAddModel) {
       setFormData(currentProject);
+      setPreviewUrl(currentProject.image)
     } else {
       setFormData(initialState);
     }
-  }, [isAddModel,currentProject]);
+  }, [isAddModel, currentProject]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
     if (isAddModel) {
-       intance
+      intance
         .post("/projects", formData)
         .then((response) => alert("Thêm thành công"))
         .catch((error) => console.log(error));
@@ -73,9 +74,11 @@ export default function AddProject({ currentProject }) {
         .put(`/projects/${id}`, formData)
         .then((response) => alert("Sửa thành công"))
         .catch((error) => console.log(error));
+        
     }
     setFormData(initialState);
-    window.location.reload();
+    // window.location.reload();
+    history.push("/admin/dashboard");
   };
   const handleCanceEditingPost = () => {
     setFormData(initialState);
@@ -185,7 +188,7 @@ export default function AddProject({ currentProject }) {
           </div>
           <div className="relative z-0 w-full mb-6 group">
             <input
-              type="text"
+              type="datetime-local"
               name="created_at"
               value={formData.created_at}
               onChange={handleInputChange}
@@ -211,42 +214,28 @@ export default function AddProject({ currentProject }) {
         <select
           id="countries"
           value={formData.skillID}
+          name="skillID"
           onChange={handleInputChange}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         >
           <option value="">Choose a Skill</option>
 
           {skillID.map((skill) => {
-            if (currentProject) {
-              return (
-                <option
-                  key={skill.id}
-                  selected={currentProject.id}
-                  value={skill.id}
-                >
-                  {skill.name}
-                </option>
-              );
-            }
-
             return (
-              <option key={skill.id} value={skill.id}>
+              <option key={skill.id} {...(formData.skillID==skill.id ?? "checked")} value={skill.id}>
                 {skill.name}
               </option>
             );
           })}
-          {/* <option defaultValue="2">HTML/CSS</option>
-          <option defaultValue="3">JavaScript</option>
-          <option defaultValue="4">PHP</option> */}
+         
         </select>
 
         <button
           type="submit"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           {isAddModel ? "Add" : "Update"}
         </button>
-       
       </form>
     </div>
   );

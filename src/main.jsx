@@ -1,4 +1,4 @@
-
+import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { AppProvider } from "./content";
@@ -14,6 +14,7 @@ import Admin from "./admin";
 import Dashboard from "./admin/Dashboard";
 import ProjectAdmin from "./admin/Project/ProjectAdmin";
 import User from "./admin/user/User";
+import Edit from "./admin/user/Edit";
 
 
 createRoot(document.getElementById("root")).render(
@@ -28,8 +29,8 @@ createRoot(document.getElementById("root")).render(
             <Route path=":id/dashboard" element={<ProjectAdmin />} />
             <Route path="dashboard" element={<ProjectAdmin />} />
           
+            <Route path="user/:id/useredit" element={<Edit />} />
             <Route path="user" element={<User />} />
-            <Route path="useredit/:id" element={<User />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

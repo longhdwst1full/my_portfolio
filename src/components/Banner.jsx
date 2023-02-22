@@ -6,10 +6,20 @@ import { AppContext } from "../content";
 
 const Banner = () => {
   const [icon, setIcon] = useState([]);
+  const [cv, setCV] = useState("");
   // const [theme] = useContext(AppContext);
   // const cv = theme?.cv;
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = cv;
+    link.download = "CV Lập trình front-end intership.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   useEffect(() => {
     intance.get("/icon_contacts").then((data) => setIcon(data));
+    intance.get("/about_me").then(([data]) => setCV(data?.cv));
   }, []);
   return (
     <section className=" w-full  relative flex min-h-screen items-center">
@@ -45,8 +55,8 @@ const Banner = () => {
               />
             </p>
           </h2>
-          <button className="rounded-3xl bg-blue-700 text-white text-2xl text-center px-5 py-2 my-3">
-            <a href=''> My resume</a>
+          <button onClick={handleDownload} className="rounded-3xl bg-blue-700 text-white text-2xl text-center px-5 py-2 my-3">
+             My resume
           </button>
         </motion.div>
         <div className="pb-8 w-[45%] flex-grow-0 m-auto pt-3 max-w-4/6">
