@@ -15,6 +15,7 @@ import Dashboard from "./admin/Dashboard";
 import ProjectAdmin from "./admin/Project/ProjectAdmin";
 import User from "./admin/user/User";
 import Edit from "./admin/user/Edit";
+import ListCategories from "./admin/Categories/ListCategories";
 
 
 createRoot(document.getElementById("root")).render(
@@ -31,6 +32,9 @@ createRoot(document.getElementById("root")).render(
           
             <Route path="user/:id/useredit" element={<Edit />} />
             <Route path="user" element={<User />} />
+            <Route path="categories" element={<ListCategories />} />
+            <Route path="categories/add" element={<ListCategories />} />
+            <Route path="categories/:id" element={<ListCategories />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

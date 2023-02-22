@@ -62,11 +62,11 @@ export default function ListProject({
                 <td className="px-6 py-4">{project.url_git}</td>
                 <td className="px-6 py-4">
                   {skill.map((item) => {
-                    if (item.id == project.skillId) return item.name;
+                    if (item.id == project.skillID) return item.name;
                   })}
                 </td>
                 <td className="px-6 py-4">{project.created_at}</td>
-                <td className="px-6 py-4 text-right">
+                <td className="px-6 py-4 text-right flex justify-between">
                   <Link
                   to={`/admin/${project.id}/dashboard`}
                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2"

@@ -39,7 +39,7 @@ export default function Admin() {
               </NavLink>
             </li>
             <li>
-              <NavLink
+              {/* <NavLink
                 to="/admin/about"
                 className={({ isActive }) => {
                   const activeClass = isActive ? "bg-gray-300" : "";
@@ -49,6 +49,21 @@ export default function Admin() {
                 {({ isActive }) => (
                   <span className={`ml-3 ${isActive ? "font-bold" : ""}`}>
                     About
+                  </span>
+                )}
+              </NavLink> */}
+            </li>
+            <li>
+              <NavLink
+                to="/admin/categories"
+                className={({ isActive }) => {
+                  const activeClass = isActive ? "bg-gray-300" : "";
+                  return `flex items-center rounded-lg ${activeClass} p-2 text-base font-normal text-gray-900 hover:bg-gray-300`;
+                }}
+              >
+                {({ isActive }) => (
+                  <span className={`ml-3 ${isActive ? "font-bold" : ""}`}>
+                    Categories
                   </span>
                 )}
               </NavLink>

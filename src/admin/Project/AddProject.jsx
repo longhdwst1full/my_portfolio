@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { redirect, useMatch, useParams   } from "react-router-dom";
+import { redirect, useMatch, useNavigate, useParams } from "react-router-dom";
 import { intance } from "../../api";
 const initialState = {
   id: "",
   name: "",
   image: "",
   description: "",
-  skillId: "",
+  skillID: "",
   url_onl: "",
   url_git: "",
   created_at: "",
@@ -14,12 +14,12 @@ const initialState = {
 export default function AddProject({ currentProject }) {
   // console.log(currentProject);
   // const history = useHistory();
+  const history = useNavigate();
   const [formData, setFormData] = useState(initialState);
   const [skillID, setSkillId] = useState([]);
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const { id } = useParams();
-  console.log(id);
   // const handleFileInputChange = (event) => {
   // const file = event.target.files[0];
   // useEffect(() => {
@@ -54,31 +54,26 @@ export default function AddProject({ currentProject }) {
   useEffect(() => {
     if (!isAddModel) {
       setFormData(currentProject);
-      setPreviewUrl(currentProject.image)
+      setPreviewUrl(currentProject.image);
     } else {
       setFormData(initialState);
     }
   }, [isAddModel, currentProject]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
     if (isAddModel) {
-      intance
-        .post("/projects", formData)
-        .then((response) => alert("Thêm thành công"))
-        .catch((error) => console.log(error));
+      await intance.post("/projects", formData);
+      alert("Thêm thành công");
     }
     if (!isAddModel) {
-      intance
-        .put(`/projects/${id}`, formData)
-        .then((response) => alert("Sửa thành công"))
-        .catch((error) => console.log(error));
-        
+      await intance.put(`/projects/${id}`, formData);
+      alert("Sửa thành công");
     }
     setFormData(initialState);
-    // window.location.reload();
-    history.push("/admin/dashboard");
+    history("/admin/dashboard");
+    window.location.reload();
   };
   const handleCanceEditingPost = () => {
     setFormData(initialState);
@@ -91,6 +86,7 @@ export default function AddProject({ currentProject }) {
       <form className="p-20 " onSubmit={handleSubmit}>
         <div className="relative z-0 w-full mb-6 group">
           <input
+            required
             type="text"
             id="floating_email"
             name="name"
@@ -109,6 +105,7 @@ export default function AddProject({ currentProject }) {
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 w-full mb-6 group">
             <input
+              required
               type="text"
               id="floating_password"
               name="image"
@@ -135,6 +132,7 @@ export default function AddProject({ currentProject }) {
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 w-full mb-6 group">
             <input
+              required
               type="text"
               name="url_onl"
               value={formData.url_onl}
@@ -152,6 +150,7 @@ export default function AddProject({ currentProject }) {
           </div>
           <div className="relative z-0 w-full mb-6 group">
             <input
+              required
               type="text"
               name="url_git"
               value={formData.url_git}
@@ -169,27 +168,31 @@ export default function AddProject({ currentProject }) {
           </div>
         </div>
         <div className=" grid md:grid-cols-2 md:gap-6">
-        <select
-          id="countries"
-          value={formData.skillId}
-          name="skillId"
-          onChange={handleInputChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full max-h-12 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
-          <option value="">Choose a Skill</option>
+          <select
+            id="countries"
+            value={formData.skillID}
+            name="skillID"
+            onChange={handleInputChange}
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full max-h-12 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="">Choose a Skill</option>
 
-          {skillID.map((skill) => {
-            return (
-              <option key={skill.id} {...(formData.skillId==skill.id ?? "checked")} value={skill.id}>
-                {skill.name}
-              </option>
-            );
-          })}
-         
-        </select>
-         
+            {skillID.map((skill) => {
+              return (
+                <option
+                  key={skill.id}
+                  {...(formData.skillID == skill.id ?? "checked")}
+                  value={skill.id}
+                >
+                  {skill.name}
+                </option>
+              );
+            })}
+          </select>
+
           <div className="relative z-0 w-full mb-6 group">
             <input
+              required
               type="datetime-local"
               name="created_at"
               value={formData.created_at}
@@ -214,24 +217,25 @@ export default function AddProject({ currentProject }) {
           Chọn Skill
         </label> */}
         <div className="relative z-0 w-full mb-6 group">
-            <textarea 
-            
-              name="description"
-              value={formData.description}
-              onChange={handleInputChange}  
-              cols={12}
-              rows={8}
-              id="floating_phone"
-              className="block w-full p-3 text-sm text-gray-900 bg-transparent border border-b-2 border-gray-300 appearance-non focus:outline-none focus:border-none  peer"
-              placeholder=" "
-            >{formData.description}</textarea>
-            <label
-              htmlFor="floating_phone"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Description
-            </label>
-          </div>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+            cols={12}
+            rows={8}
+            id="floating_phone"
+            className="block w-full p-3 text-sm text-gray-900 bg-transparent border border-b-2 border-gray-300 appearance-non focus:outline-none focus:border-none  peer"
+            placeholder=" "
+          >
+            {formData.description}
+          </textarea>
+          <label
+            htmlFor="floating_phone"
+            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >
+            Description
+          </label>
+        </div>
 
         <button
           type="submit"
