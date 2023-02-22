@@ -10,7 +10,7 @@ export default function ListCategories() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState(initialState);
 
-  const mathPath = useMatch("/admin/user/add");
+  const mathPath = useMatch("admin/categories/add");
   const isAddMode = Boolean(mathPath);
   const { id } = useParams();
   const history = useNavigate();
@@ -37,9 +37,9 @@ export default function ListCategories() {
     }
     if (id && isAddMode == false) {
       await intance.put(`/skills/${id}`, form);
-      history("/admin/categories");
       alert("Sửa thành công");
     }
+    history("/admin/categories");
 
     setForm(initialState);
     setShowForm(false);

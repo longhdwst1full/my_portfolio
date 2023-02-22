@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useMatch, useParams } from "react-router-dom";
+import { useMatch, useNavigate, useParams } from "react-router-dom";
 import { intance } from "../../api";
 
 export default function Edit() {
   const [formState, setFormState] = useState({});
-  const {id}=useParams();
+  const { id } = useParams();
+  const history = useNavigate();
+
   useEffect(() => {
     intance.get("/about_me").then(([data]) => setFormState(data));
   }, []);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    intance
-    .put(`/about_me/${id}`, formState)
-    .then((response) => alert("Sửa thành công"))
-    .catch((error) => console.log(error));
+    await intance.put(`/about_me/${id}`, formState);
+    alert("Sửa thành công");
+    // .catch((error) => console.log(error));
+    history("/admin/user");
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
