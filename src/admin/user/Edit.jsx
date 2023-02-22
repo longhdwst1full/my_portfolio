@@ -1,131 +1,215 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useMatch, useParams } from "react-router-dom";
+import { intance } from "../../api";
 
 export default function Edit() {
+  const [formState, setFormState] = useState({});
+  const {id}=useParams();
+  useEffect(() => {
+    intance.get("/about_me").then(([data]) => setFormState(data));
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    intance
+    .put(`/about_me/${id}`, formState)
+    .then((response) => alert("Sửa thành công"))
+    .catch((error) => console.log(error));
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
   return (
-    <form>
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="email"
-          name="floating_email"
-          id="floating_email"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          htmlFor="floating_email"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Email address
-        </label>
-      </div>
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="password"
-          name="floating_password"
-          id="floating_password"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          htmlFor="floating_password"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Password
-        </label>
-      </div>
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="password"
-          name="repeat_password"
-          id="floating_repeat_password"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          htmlFor="floating_repeat_password"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Confirm password
-        </label>
-      </div>
-      <div className="grid md:grid-cols-2 md:gap-6">
-        <div className="relative z-0 w-full mb-6 group">
+    <div className="p-3">
+      <h1 className="text-center text-3xl mb-10 font-semibold">
+        Edit Information Me
+      </h1>
+      <form className="mt-6" onSubmit={handleSubmit}>
+        <div className="grid md:grid-cols-2 md:gap-6">
+          <div className="group relative z-0 mb-6 w-full">
+            <input
+              type="text"
+              name="name"
+              id="first_name"
+              value={formState.name ? formState.name : ""}
+              onChange={handleChange}
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="first_name"
+              className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+            >
+              Name
+            </label>
+          </div>
+          <div className="group relative z-0 mb-6 w-full">
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              value={formState?.phone ? formState?.phone : ""}
+              onChange={handleChange}
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="phone"
+              className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+            >
+              Phone Number
+            </label>
+          </div>
+        </div>
+        <div className="group relative z-0 mb-6 w-full">
           <input
             type="text"
-            name="floating_first_name"
-            id="floating_first_name"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            name="avatar"
+            id="avatar"
+            className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
             placeholder=" "
+            value={formState.avatar ? formState.avatar : ""}
+            onChange={handleChange}
             required
           />
           <label
-            htmlFor="floating_first_name"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            htmlFor="avatar"
+            className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
           >
-            First name
+            Link ảnh
           </label>
         </div>
-        <div className="relative z-0 w-full mb-6 group">
+        <div className="group relative z-0 mb-6 w-full">
           <input
             type="text"
-            name="floating_last_name"
-            id="floating_last_name"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            name="cv"
+            id="cv"
+            className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
             placeholder=" "
+            value={formState.cv ? formState.cv : ""}
+            onChange={handleChange}
             required
           />
           <label
-            htmlFor="floating_last_name"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            htmlFor="cv"
+            className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
           >
-            Last name
+            CV Link
           </label>
         </div>
-      </div>
-      <div className="grid md:grid-cols-2 md:gap-6">
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            name="floating_phone"
-            id="floating_phone"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor="floating_phone"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Phone number (123-456-7890)
-          </label>
+        <div className="grid md:grid-cols-2 md:gap-6">
+          <div className="group relative z-0 mb-6 w-full">
+            <input
+              type="email"
+              name="email"
+              id="floating_email"
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              value={formState.email ? formState.email : ""}
+              onChange={handleChange}
+              required
+            />
+            <label
+              htmlFor="floating_email"
+              className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+            >
+              Email address
+            </label>
+            {/* {errorForm && (
+            <p className="mt-2 text-sm text-red-600">
+              <span className="font-medium">Lỗi !</span>
+              {errorForm.email}
+            </p>
+          )} */}
+          </div>
+          <div className="group relative z-0 mb-6 w-full">
+            <input
+              type="age"
+              name="age"
+              id="floating_age"
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              value={formState.age ? formState.age : ""}
+              onChange={handleChange}
+              required
+            />
+            <label
+              htmlFor="floating_age"
+              className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+            >
+              AGE
+            </label>
+            {/* {errorForm && (
+            <p className="mt-2 text-sm text-red-600">
+              <span className="font-medium">Lỗi !</span>
+              {errorForm.email}
+            </p>
+          )} */}
+          </div>
         </div>
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="floating_company"
-            id="floating_company"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor="floating_company"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Company (Ex. Google)
-          </label>
+
+        <div className="grid md:grid-cols-2 md:gap-6">
+          <div className="group relative z-0 mb-6 w-full">
+            <input
+              type="text"
+              name="desc_job"
+              id="desc_job"
+              value={formState?.desc_job ? formState?.desc_job : ""}
+              onChange={handleChange}
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="desc_job"
+              className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+            >
+              Title Job
+            </label>
+          </div>
+          <div className="group relative z-0 mb-6 w-full">
+            <input
+              type="text"
+              name="address"
+              id="btc_address"
+              value={formState.address ? formState.address : ""}
+              onChange={handleChange}
+              className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="btc_address"
+              className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+            >
+              BTC Address
+            </label>
+          </div>
         </div>
-      </div>
-      <button
-        type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        Submit
-      </button>
-    </form>
+
+        <div className="description w-full">
+          <p>Mô tả sản phẩm:</p>
+          <textarea
+            name="description"
+            cols="100"
+            onChange={handleChange}
+            className="description border "
+            value={formState.description ? formState.description : ""}
+            rows="8"
+          >
+            {formState.description}
+          </textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+        >
+          Update
+        </button>
+      </form>
+    </div>
   );
 }

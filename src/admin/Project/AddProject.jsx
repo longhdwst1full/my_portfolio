@@ -6,7 +6,7 @@ const initialState = {
   name: "",
   image: "",
   description: "",
-  skillID: "",
+  skillId: "",
   url_onl: "",
   url_git: "",
   created_at: "",
@@ -169,23 +169,25 @@ export default function AddProject({ currentProject }) {
           </div>
         </div>
         <div className=" grid md:grid-cols-2 md:gap-6">
-          <div className="relative z-0 w-full mb-6 group">
-            <input
-              type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleInputChange}
-              id="floating_phone"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" "
-            />
-            <label
-              htmlFor="floating_phone"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Description
-            </label>
-          </div>
+        <select
+          id="countries"
+          value={formData.skillId}
+          name="skillId"
+          onChange={handleInputChange}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full max-h-12 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option value="">Choose a Skill</option>
+
+          {skillID.map((skill) => {
+            return (
+              <option key={skill.id} {...(formData.skillId==skill.id ?? "checked")} value={skill.id}>
+                {skill.name}
+              </option>
+            );
+          })}
+         
+        </select>
+         
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="datetime-local"
@@ -205,30 +207,31 @@ export default function AddProject({ currentProject }) {
           </div>
         </div>
 
-        <label
+        {/* <label
           htmlFor="countries"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >
           Chọn Skill
-        </label>
-        <select
-          id="countries"
-          value={formData.skillID}
-          name="skillID"
-          onChange={handleInputChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
-          <option value="">Choose a Skill</option>
-
-          {skillID.map((skill) => {
-            return (
-              <option key={skill.id} {...(formData.skillID==skill.id ?? "checked")} value={skill.id}>
-                {skill.name}
-              </option>
-            );
-          })}
-         
-        </select>
+        </label> */}
+        <div className="relative z-0 w-full mb-6 group">
+            <textarea 
+            
+              name="description"
+              value={formData.description}
+              onChange={handleInputChange}  
+              cols={12}
+              rows={8}
+              id="floating_phone"
+              className="block w-full p-3 text-sm text-gray-900 bg-transparent border border-b-2 border-gray-300 appearance-non focus:outline-none focus:border-none  peer"
+              placeholder=" "
+            >{formData.description}</textarea>
+            <label
+              htmlFor="floating_phone"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Description
+            </label>
+          </div>
 
         <button
           type="submit"
