@@ -62,7 +62,7 @@ export default function ListProject({
                 <td className="px-6 py-4">{project.url_git}</td>
                 <td className="px-6 py-4">
                   {skill.map((item) => {
-                    if (item.id == project.skillID) return item.name;
+                    if (item.id == project.skillId) return item.name;
                   })}
                 </td>
                 <td className="px-6 py-4">{project.created_at}</td>
