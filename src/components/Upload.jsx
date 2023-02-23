@@ -4,7 +4,7 @@ import React, {  useState } from "react";
 const Upload = () => {
   const [fileList, setFileList] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     // e.preventDefault();
 
     if (!fileList) {

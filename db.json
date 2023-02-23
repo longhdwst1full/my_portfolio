@@ -1,184 +1,240 @@
 {
-  "profile": [
+  "skills": [
     {
+      "id": "1",
+      "name": "HTML5",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/html-5--v1_phmicg.png"
+    },
+    {
+      "id": "2",
+      "name": "CSS3",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/css3_taqsy4.png"
+    },
+    {
+      "id": "3",
+      "name": "JavaScript",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/javascript--v1_o2p9wl.png"
+    },
+    {
+      "id": "4",
+      "name": "ReactJS",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/reactjs__a3w9ts.png"
+    },
+    {
+      "id": 5,
+      "name": "NodeJS",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/nodejs_gywdyg.png"
+    },
+    {
+      "id": 6,
+      "name": "Redux",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/redux_r927rb.png"
+    },
+    {
+      "id": 7,
+      "name": "TailwindCSS",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/Tailwind_CSS_svg_m5zv7d.png"
+    },
+    {
+      "id": 8,
+      "name": "Bootstrap",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/bootstrap_drzda2.png"
+    },
+    {
+      "id": 9,
+      "name": "PHP",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643459/my-portfolio/php-logo_mexmns.png"
+    },
+    {
+      "id": 10,
+      "name": "GitHub",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/github_aom9zr.png"
+    },
+    {
+      "id": 11,
+      "name": "MongoDB",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/mongodb_esbxyo.png"
+    },
+    {
+      "id": 12,
+      "name": "TypeScript",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"
+    }
+  ],
+  "navDetail": [
+    {
+      "name": "About",
+      "path": "/#about"
+    },
+    {
+      "name": "Skill",
+      "path": "/#skill"
+    },
+    {
+      "name": "Project",
+      "path": "/#project"
+    },
+    {
+      "name": "Education",
+      "path": "/#education"
+    },
+    {
+      "name": "Contacts",
+      "path": "/#contact_me"
+    }
+  ],
+  "icon_contacts": [
+    {
+      "id": 1,
+      "name": "Hoàng Long",
+      "link": "https://www.facebook.com/profile.php?id=100042337223043",
+      "class": "fab fa-facebook-f  ",
+      "show": "true"
+    },
+    {
+      "id": 2,
+      "name": "GitHub",
+      "link": "https://github.com/longhdwst1full",
+      "class": "fab fa-github ",
+      "show": "true"
+    },
+    {
+      "id": 3,
+      "name": "Hoàng Long",
+      "class": "fab fa-telegram-plane",
+      "show": "true"
+    },
+    {
+      "id": 4,
+      "name": "hoanglonggg356@gmail.com",
+      "class": "fas fa-envelope",
+      "show": "true"
+    },
+    {
+      "id": 5,
+      "name": "0865257620",
+      "class": "fas fa-phone"
+    }
+  ],
+  "about_me": [
+    {
+      "id": 1,
       "cv": "https://drive.google.com/file/d/1wIl7jOwPrrqAi-BA799E59543ZMc-Jtr/view",
-      "skills": [
-        {
-          "id": "1",
-          "name": "HTML5",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/html-5--v1_phmicg.png"
-        },
-        {
-          "id": "2",
-
-          "name": "CSS3",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/css3_taqsy4.png"
-        },
-        {
-          "id": "3",
-
-          "name": "JavaScript",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/javascript--v1_o2p9wl.png"
-        },
-        {
-          "id": "4",
-          "name": "ReactJS",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/reactjs__a3w9ts.png"
-        },
-        {
-          "id": 5,
-          "name": "NodeJS",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/nodejs_gywdyg.png"
-        },
-        {
-          "id": 6,
-          "name": "Redux",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/redux_r927rb.png"
-        },
-        {
-          "id": 7,
-          "name": "TailwindCSS",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/Tailwind_CSS_svg_m5zv7d.png"
-        },
-        {
-          "id": 8,
-          "name": "Bootstrap",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/bootstrap_drzda2.png"
-        },
-        {
-          "id": 9,
-          "name": "PHP",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643459/my-portfolio/php-logo_mexmns.png"
-        },
-        {
-          "id": 10,
-          "name": "GitHub",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/github_aom9zr.png"
-        },
-        {
-          "id": 11,
-          "name": "MongoDB",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/mongodb_esbxyo.png"
-        }
-      ],
-      "navDetail": [
-        {
-          "name": "About",
-          "path": "/#about"
-        },
-        {
-          "name": "Skill",
-          "path": "/#skill"
-        },
-        {
-          "name": "Project",
-          "path": "/#project"
-        },
-        {
-          "name": "Education",
-          "path": "/#education"
-        },
-        {
-          "name": "Contacts",
-          "path": "/#contact_me"
-        }
-      ],
-      "icon_contacts": [
-        {
-          "id": 1,
-          "name": "Hoàng Long",
-          "link": "https://www.facebook.com/profile.php?id=100042337223043",
-          "class": "fab fa-facebook-f  ",
-          "show": "true"
-        },
-        {
-          "id": 2,
-          "name": "GitHub",
-          "link": "https://github.com/longhdwst1full",
-          "class": "fab fa-github ",
-          "show": "true"
-        },
-        {
-          "id": 3,
-          "name": "Hoàng Long",
-          "class": "fab fa-telegram-plane",
-          "show": "true"
-        },
-        {
-          "id": 4,
-          "name": "hoanglonggg356@gmail.com",
-          "class": "fas fa-envelope",
-          "show": "true"
-        },
-        {
-          "id": 5,
-          "name": "0865257620",
-          "class": "fas fa-phone"
-        }
-      ],
-      "about_me": [
-        {
-          "id": 1,
-          "avatar": "https://jigarsable.netlify.app/assets/images/hero.png",
-          "name": "Hoàng Đình Long",
-          "description": "I am a Full-Stack developer based in Pune, India. I am an Information Technology undergraduate from SPPU. I am very passionate about improving my coding skills & developing applications & websites. I build WebApps and Websites using MERN Stack. Working for myself to improve my skills. Love to build Full-Stack clones.",
-          "desc_job": "Full Stack Developer",
-          "age": "20",
-          "phone": "0865257620",
-          "email": "hoanglonggg356@gmail.com",
-          "address": "Từ Liêm"
-        }
-      ],
-      "education": [
-        {
-          "id": 1,
-          "school_name": "CĐ FPT",
-          "img_school": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/c%C4%91fpt_bpg7ql.jpg",
-          "description": "Lập trình web",
-          "time": "2019"
-        },
-        {
-          "id": 2,
-          "school_name": "CĐ FPT",
-          "img_school": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/c%C4%91fpt_bpg7ql.jpg",
-          "description": "Lập trình web",
-          "time": "2019"
-        }
-      ],
-      "projects": [
-        {
-          "id": 1,
-          "name": "Realtime Chat Application",
-          "image": "https://jigarsable.netlify.app/assets/images/hero.png",
-          "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
-          "skii": ["reactjs", "firebase"],
-          "url_onl": "https://chat-app-gray-gamma.vercel.app/login",
-          "url_git": "https://github.com/longhdwst1full/Chat_app",
-          "created_at": "11/2/2023"
-        },
-
-        {
-          "id": 2,
-          "name": "Spotyfy Application",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/c_scale,w_1305/v1676644270/my-portfolio/spotyfi_otryde.png",
-          "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
-          "skii": ["reactjs"],
-          "url_onl": "https://spotyfi-app.vercel.app/",
-          "url_git": "https://github.com/longhdwst1full/spotyfi_app",
-          "created_at": "10/2/2023"
-        },
-
-        {
-          "id": 3,
-          "name": "Shoppe Application",
-          "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676644270/my-portfolio/spotyfi_otryde.png",
-          "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
-          "skii": ["reactjs", "typescript", "react query"],
-          "url_onl": "https://shoppe-app.vercel.app/",
-          "url_git": "https://github.com/longhdwst1full/Shoppe-App",
-          "created_at": "10/2/2023"
-        }
-      ]
+      "avatar": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676644641/my-portfolio/24b81ac65ab793e9caa6_nzxvfl.jpg",
+      "name": "Hoàng Đình Long",
+      "description": "When I started learning web programming, I was fascinated by how each line of code could create a complete website. I spent hours studying programming languages like HTML, CSS, and JavaScript. I always enjoyed finding ways to improve my skills and create beautiful and functional websites. This job requires persistence, attention to detail, and creativity - all qualities I am striving to develop.",
+      "desc_job": "Full Stack Developer",
+      "age": "201",
+      "phone": "0865257620",
+      "email": "hoanglonggg356@gmail.com",
+      "address": "Từ Liêm"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "school_name": "Cao Đẳng FPT Polytechnic",
+      "img_school": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/c%C4%91fpt_bpg7ql.jpg",
+      "description": "Lập trình website",
+      "time": "2021"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Realtime Chat Application",
+      "image": "https://jigarsable.netlify.app/assets/images/hero.png",
+      "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
+      "skillId": 1,
+      "categoryId": 1,
+      "url_onl": "https://chat-app-gray-gamma.vercel.app/login",
+      "url_git": "https://github.com/longhdwst1full/Chat_app",
+      "created_at": "2023-02-06T10:45"
+    },
+    {
+      "id": 3,
+      "name": "Shoppe Application",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676644661/my-portfolio/Screenshot_3_q2sm8k.png",
+      "description": "Chat app with social authentication using Firebase, great design, and real-time chat, the ability to create multiple rooms, and much more.",
+      "skillId": 4,
+      "categoryId": 1,
+      "url_onl": "https://shoppe-app.vercel.app/",
+      "url_git": "https://github.com/longhdwst1full/Shoppe-App",
+      "created_at": "2023-02-10T11:26"
+    },
+    {
+      "name": "23",
+      "image": "https://vcdn1-dulich.vnecdn.net/2022/09/14/4-1663171508.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=S06yaNXNAEw5yuUNPbsJYA",
+      "url_onl": "fdfd",
+      "url_git": "ffggfg",
+      "created_at": "fgfdg",
+      "description": "dfgsdfg",
+      "": "3",
+      "id": 12,
+      "skillId": "7",
+      "categoryId": 2
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "HTML5",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/html-5--v1_phmicg.png"
+    },
+    {
+      "id": 2,
+      "name": "CSS3",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/css3_taqsy4.png"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/javascript--v1_o2p9wl.png"
+    },
+    {
+      "id": 4,
+      "name": "ReactJS",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/reactjs__a3w9ts.png"
+    },
+    {
+      "id": 5,
+      "name": "NodeJS",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/nodejs_gywdyg.png"
+    },
+    {
+      "id": 6,
+      "name": "Redux",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643458/my-portfolio/redux_r927rb.png"
+    },
+    {
+      "id": 7,
+      "name": "TailwindCSS",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/Tailwind_CSS_svg_m5zv7d.png"
+    },
+    {
+      "id": 8,
+      "name": "Bootstrap",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643454/my-portfolio/bootstrap_drzda2.png"
+    },
+    {
+      "id": 9,
+      "name": "PHP",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643459/my-portfolio/php-logo_mexmns.png"
+    },
+    {
+      "id": 10,
+      "name": "GitHub",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643456/my-portfolio/github_aom9zr.png"
+    },
+    {
+      "id": 11,
+      "name": "MongoDB",
+      "image": "https://res.cloudinary.com/dy1jlseae/image/upload/v1676643457/my-portfolio/mongodb_esbxyo.png"
+    },
+    {
+      "id": 12,
+      "name": "TypeScript",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"
     }
   ]
 }
