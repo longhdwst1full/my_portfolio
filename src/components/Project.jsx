@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../content";
 import { motion } from "framer-motion";
 import { intance } from "../api";
+import Categories from "./Categories";
 
 const Project = () => {
   // const [theme] = useContext(AppContext);
@@ -13,7 +14,11 @@ const Project = () => {
   useEffect(() => {
     intance.get("/projects").then((data) => setProject(data))
   }, []);
+// const handleClckItem=(data)=>{
+//   // console.log(data)
 
+//   setProject(data)
+// }
   return (
     <section className={`${cx("work")} pt-20 `} id="project">
       <motion.div
@@ -31,6 +36,7 @@ const Project = () => {
       </motion.div>
 
       <div className={`${cx("box-container")} text-center`}>
+      {/* <Categories handleClckItem={handleClckItem} /> */}
      
         {project &&
           project.map(
